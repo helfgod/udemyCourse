@@ -1,13 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
+//rutas
+import { APP_ROUTING } from "./app.routes";
 
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
+//servicios
 
+//components
+import { AppComponent } from "./app.component";
+import { NavbarComponent } from "./components/shared/navbar/navbar.component";
+import { HomeComponent } from "./components/home/home.component";
+import { AboutComponent } from "./components/about/about.component";
+import { HeroesComponent } from "./components/heroes/heroes.component";
+import { HeroesService } from "./services/heroes.service";
 
 @NgModule({
   declarations: [
@@ -17,10 +22,11 @@ import { HeroesComponent } from './components/heroes/heroes.component';
     AboutComponent,
     HeroesComponent
   ],
-  imports: [
-    BrowserModule
+  imports: [BrowserModule,
+     APP_ROUTING,],
+  providers: [
+    HeroesService
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
